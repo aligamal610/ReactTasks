@@ -1,0 +1,178 @@
+:root {
+  --accent: #ffb347;
+  --bg: #0d0d0f;
+  --card-bg: #181820;
+  --text-main: #f5f5f5;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* Navbar */
+.blur-bg {
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, #2c2c3f 0, transparent 50%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.text-accent {
+  color: var(--accent) !important;
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #000;
+}
+
+.btn-accent:hover {
+  filter: brightness(1.05);
+  color: #000;
+}
+
+/* Hero image */
+.hero-image-wrapper {
+  padding: 8px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--accent), #ffffff10);
+}
+
+.hero-image {
+  border-radius: 20px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Sections */
+.section {
+  position: relative;
+}
+
+.section:nth-of-type(odd) {
+  background-color: #101018;
+}
+
+.section:nth-of-type(even) {
+  background-color: #0b0b10;
+}
+
+.section-title {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #a0a0b8;
+}
+
+/* Cards */
+.edu-card {
+  background-color: var(--card-bg);
+  border: 1px solid #2a2a36;
+}
+
+/* Skills */
+.skill-progress {
+  background-color: #232332;
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.social-icons a {
+  font-size: 1.2rem;
+  color: #c2c2d8;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+  color: var(--accent);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.7s ease-out;
+}
+
+.fade-in-up-delayed {
+  animation: fadeInUp 0.9s ease-out;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.7s ease-out;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.7s ease-out;
+}
+.fade-in-right-delay {
+  animation: fadeInRight 0.7s ease-out;
+  animation-delay: 0.6s; 
+  animation-fill-mode: both; /* تفضل مخفية لحد ما الأنيميشن يبدأ */
+}
